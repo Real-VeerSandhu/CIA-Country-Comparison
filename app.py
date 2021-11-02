@@ -12,7 +12,11 @@ data = pd.read_csv('data/cia_factbook.csv')
 col1, col2 = st.columns(2)
 
 with col1:
-    country1 = st.text_input('Country #1')
+    country1 = st.selectbox('Select Country #1', data['country'])
+    if country1:
+        st.markdown(f'## {country1}')
 
 with col2:
-    country2 = st.text_input('Country #2')
+    country2 = st.selectbox('Select Country #2', data['country'])
+    if country1:
+        st.markdown(f'## {country1}')
