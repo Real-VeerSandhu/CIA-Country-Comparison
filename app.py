@@ -17,7 +17,7 @@ def write_info(country_data, columns):
     #    'net_migration_rate', 'population', 'population_growth_rate'],
     #   dtype='object')
     st.write(f'**Population**: `{country_data[columns[9]].iloc[0]}`')
-    st.write(f'**Population Density (people per km²)**: `{country_data[columns[9]].iloc[0] / country_data[columns[1]].iloc[0]}`')
+    st.write(f'**Population Density (people per km²)**: `{int(country_data[columns[9]].iloc[0] / country_data[columns[1]].iloc[0])}`')
     st.write(f'**Population Growth Rate**: `{country_data[columns[10]].iloc[0]}`')
     st.write(f'**Migration Rate (per 1,000)**: `{country_data[columns[8]].iloc[0]}`')
     st.write(f'**Birth Rate**: `{country_data[columns[2]].iloc[0]}`')
