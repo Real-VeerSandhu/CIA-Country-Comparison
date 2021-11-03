@@ -4,7 +4,7 @@ import pandas as pd
 st.set_page_config(page_title="CIA Country Comparison", page_icon="🔎", layout='wide', initial_sidebar_state="expanded")
 
 st.write('# CIA Country Comparison')
-st.markdown('Compare data between two countries based on information from the CIA Factbook')
+st.markdown('Compare data between countries based on information from the CIA Factbook')
 
 data = pd.read_csv('data/cia_factbook.csv')
 
