@@ -16,7 +16,14 @@ def write_info(country_data, columns):
     #    'internet_users', 'life_exp_at_birth', 'maternal_mortality_rate',
     #    'net_migration_rate', 'population', 'population_growth_rate'],
     #   dtype='object')
-    st.write(f'`Population`: {country_data[columns[9]]}')
+    st.write(f'**Population**: `{country_data[columns[9]].iloc[0]}`')
+    st.write(f'**Population Density (people per km²)**: `{country_data[columns[9]].iloc[0] / country_data[columns[1]].iloc[0]}`')
+    st.write(f'**Population Growth Rate**: `{country_data[columns[10]].iloc[0]}`')
+    st.write(f'**Migration Rate (per 1,000)**: `{country_data[columns[8]].iloc[0]}`')
+    st.write(f'**Birth Rate**: `{country_data[columns[2]].iloc[0]}`')
+    st.write(f'**Death Rate**: `{country_data[columns[3]].iloc[0]}`')
+    st.write(f'**Life Expectancy**: `{country_data[columns[6]].iloc[0]}`')
+
 
 def main():
     col1, col2 = st.columns(2)
@@ -25,12 +32,15 @@ def main():
         country1 = st.selectbox('Select Country #1', data['country'], index=2)
         if country1:
             st.markdown(f'## {country1}')
-            x1 = search(country1)
-            st.write('Population:', x1['population'].iloc[0])
+            st.markdown('----')
+            data_country1 = search(country1)
+            write_info(data_country1, data_country1.columns)
     with col2:
         country2 = st.selectbox('Select Country #2', data['country'], index=1)
         if country2:
             st.markdown(f'## {country2}')
-            st.write(search(country2))
+            st.markdown('----')
+            data_country2 = search(country2)
+            write_info(data_country2, data_country2.columns)
 if __name__ == '__main__':
     main()
