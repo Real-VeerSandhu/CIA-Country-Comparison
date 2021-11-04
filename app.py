@@ -12,10 +12,6 @@ def search(country_name):
     return (data[data['country'] == country_name])
 
 def write_info(country_data, columns):
-    # Index(['country', 'area', 'birth_rate', 'death_rate', 'infant_mortality_rate',
-    #    'internet_users', 'life_exp_at_birth', 'maternal_mortality_rate',
-    #    'net_migration_rate', 'population', 'population_growth_rate'],
-    #   dtype='object')
     st.write(f'**Population**: `{country_data[columns[9]].iloc[0]}`')
     st.write(f'**Population Density (people per km²)**: `{int(country_data[columns[9]].iloc[0] / country_data[columns[1]].iloc[0])}`')
     st.write(f'**Population Growth Rate**: `{country_data[columns[10]].iloc[0]}`')
@@ -23,7 +19,6 @@ def write_info(country_data, columns):
     st.write(f'**Birth Rate**: `{country_data[columns[2]].iloc[0]}`')
     st.write(f'**Death Rate**: `{country_data[columns[3]].iloc[0]}`')
     st.write(f'**Life Expectancy**: `{country_data[columns[6]].iloc[0]}`')
-
 
 def main():
     col1, col2 = st.columns(2)
