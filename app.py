@@ -37,5 +37,6 @@ def main():
             st.markdown('----')
             data_country2 = search(country2)
             write_info(data_country2, data_country2.columns)
+            
 if __name__ == '__main__':
     main()
