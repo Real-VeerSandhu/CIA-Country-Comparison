@@ -20,7 +20,7 @@ def write_info(country_data, columns):
     st.write(f'**Death Rate**: `{country_data[columns[3]].iloc[0]}`')
     st.write(f'**Life Expectancy**: `{country_data[columns[6]].iloc[0]}`')
 
-    print('Data Loaded...')
+    print('Data Loaded...', country_data)
 
 def main():
     col1, col2 = st.columns(2)
