@@ -24,7 +24,6 @@ def write_info(country_data, columns):
 
 def main():
     col1, col2 = st.columns(2)
-
     with col1:
         country1 = st.selectbox('Select Country #1', data['country'], index=2)
         if country1:
