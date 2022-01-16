@@ -8,6 +8,9 @@ st.markdown('Compare data between countries based on information from the CIA Fa
 
 data = pd.read_csv('data/cia_factbook.csv')
 
+def read_type(data_val):
+    return search(data_val), type(data_val)
+
 def search(country_name):
     return (data[data['country'] == country_name])
 
@@ -38,6 +41,6 @@ def main():
             st.markdown('----')
             data_country2 = search(country2)
             write_info(data_country2, data_country2.columns)
-            
+        
 if __name__ == '__main__':
     main()
